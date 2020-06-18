@@ -1,0 +1,76 @@
+<!-- templates/base.html -->
+{% load bootstrap4 %}
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}Exam Site{% endblock %}</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static './static/main.css' %}">
+
+
+    {% block css %}
+    <style>
+      body { background-color: DarkSlateGray;}
+      .nav-item { font-size: larger;
+                  color:white;
+      }
+      a{ color:white;
+        font-size: larger;
+        text-align: center;
+      }
+    </style>
+    {% endblock %}
+  </head>
+  <body>
+    <div class="container" style="padding: 30px;">
+      <!-- <nav class="navbar navbar-light" style="background-color:OliveDrab; color:white">
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="pills-home-tab" data-toggle="pill" 
+            href="/home/harmin/DjangoProject/exam_site/Examination/templates/home.html" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+          <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">...</div>
+          <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+          <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+        </div>
+      </nav> -->
+    </div>
+    <div class="container" style="background-color: wheat;
+    min-height: 400px;
+    ">
+      <div class="p-3 mb-2 bg-dark text-white">
+              {% block content %}
+      
+
+              {% endblock %}
+            
+          <footer>
+ 
+          </footer>
+        
+      </div>
+    </div>
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- <script type="text/javascript">
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+      })
+    </script> -->
+    {% block js %}
+    
+    {% endblock %}
+  </body>
+</html>

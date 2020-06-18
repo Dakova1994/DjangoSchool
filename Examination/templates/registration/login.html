@@ -1,0 +1,15 @@
+<!-- templates/login.html -->
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+<h2>Login to Exam site</h2>
+<form method="post">
+  {% csrf_token %}
+  {% bootstrap_form form %}
+  {% buttons submit='login' %}{% endbuttons %}
+</form>
+{% endblock %}

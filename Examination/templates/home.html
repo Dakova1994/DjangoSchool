@@ -1,0 +1,35 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block title %}
+
+{% endblock %}
+<style>
+.contener {
+  padding: 70px 0;
+  border: 3px solid green;
+  text-align: center;;
+}
+a{
+  font-size: medium;
+}
+
+</style>
+{% block content %}
+<div class="contener">
+ 
+    {% if user.is_authenticated %}
+      <h1>Welcome to Exam Site</h1>
+      <h3>Hi {{ user.username }}! </h3>
+      <a href="{% url 'Examination:question' %}">{% bootstrap_button 'Create question' size='lg' %}</a>
+      <a href="{% url 'Examination:assignment' %}">{% bootstrap_button 'Create assignment' size='lg' %}</a>
+      <p><a href="{% url 'logout' %}">{% bootstrap_button 'Logout' size='lg' %}</a></p>
+    {% else %}
+      <h1>Welcome to Exam Site</h1>
+      <p>Try to login or signup</p>
+      <a href="{% url 'login' %}">{% bootstrap_button 'Login' size='lg' %}</a> 
+      <a href="{% url 'Examination:signup' %}">{% bootstrap_button 'Sign Up' size='lg' %}</a>
+    {% endif %}
+
+</div>
+{% endblock %}
