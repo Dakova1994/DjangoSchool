@@ -28,10 +28,10 @@ class QuestionView(CreateView):
 class AssignmentView(CreateView):
     form_class = AssignmentForm
     template_name = 'assignment.html'
+    
+    def get_success_url(self):
+        return reverse('home')    
 
-class AssigmentModelView(generic.ListView):
-    template_name = 'assignment.html'
-    context_object_name = 'list_assigment'
 
     # def get_queryset(self):
     #     return Assignment.objects.all()
