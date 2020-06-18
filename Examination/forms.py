@@ -19,13 +19,13 @@ class UserChange(UserChangeForm):
 class QuestionForm(forms.ModelForm):
     class Meta:
         model = Question
-        fields = ('question','choices','answer','assignment','order')
+        fields = ('question','choices','answer', 'order')
         add_fields = ('choices') 
 
 class AssignmentForm(forms.ModelForm):
     class Meta:
         model = Assignment
-        fields = ('title', 'teacher')
+        fields = ('title', 'teacher', 'questions')
 
 class ChoiceForm(forms.Form):
     class Meta:
